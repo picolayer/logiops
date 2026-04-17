@@ -1,0 +1,28 @@
+# Doxyfile.in
+# This file is an input file for CMake to configure Doxygen.
+
+PROJECT_NAME           = "@PROJECT_NAME@"
+PROJECT_NUMBER         = "@LOGIOPS_VERSION@"
+OUTPUT_DIRECTORY       = "doc"
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+GENERATE_CHI           = NO
+GENERATE_DOCBOOK       = NO
+GENERATE_AUTOGEN_DEF   = NO
+QUIET                  = YES
+WARNINGS               = NO
+INPUT                  = "@CMAKE_SOURCE_DIR@/src/logid"
+FILE_PATTERNS          = *.h \
+                         *.cpp
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */backend/* \
+                         */ipcgull/*
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
