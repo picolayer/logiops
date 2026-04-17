@@ -4,6 +4,9 @@ on:
     tags:
       - 'v*.*'
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     name: Publish release tarball
@@ -13,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
@@ -30,6 +33,6 @@ jobs:
           mv /tmp/$ARCHIVE_NAME.tar.gz .
 
       - name: Upload release asset
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2
         with:
           files: logiops-${{ github.ref_name }}.tar.gz
