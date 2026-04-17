@@ -1,0 +1,36 @@
+PROJECT_NAME           = "LogiOps"
+PROJECT_NUMBER         = @LOGIOPS_VERSION@
+PROJECT_BRIEF          = "A userspace driver for Logitech devices"
+
+OUTPUT_DIRECTORY       = html
+
+INPUT                  = src/logid
+FILE_PATTERNS          = *.h *.hpp *.cpp
+
+RECURSIVE              = YES
+
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_PACKAGE        = NO
+EXTRACT_STATIC         = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+GENERATE_LATEX         = NO
+
+USE_MDFILE_AS_MAINPAGE = 
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+
+HAVE_DOT               = NO
+
+COLLABORATION_GRAPH    = NO
+INCLUDE_GRAPH          = NO
+INCLUDED_BY_GRAPH      = NO
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+GENERATE_TREEVIEW      = YES
