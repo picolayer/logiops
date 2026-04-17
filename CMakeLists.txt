@@ -56,5 +56,19 @@ if(USE_USER_BUS)
     add_definitions(-DUSE_USER_BUS)
 endif()
 
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+    set(DOXYFILE_IN "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile")
+    set(DOXYFILE_OUT "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
+
+    configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
+
+    add_custom_target(doc
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Generating API documentation with Doxygen"
+        VERBATIM)
+endif()
+
 add_subdirectory(src/ipcgull)
 add_subdirectory(src/logid)
