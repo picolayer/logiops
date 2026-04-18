@@ -14,7 +14,7 @@ jobs:
     container: ${{ matrix.container }}
     strategy:
       matrix:
-        container: [ 'ubuntu:latest', 'ubuntu:20.04', 'fedora:latest', 'archlinux:base-devel' ]
+        container: [ 'ubuntu:22.04', 'ubuntu:20.04', 'fedora:38', 'archlinux:base-devel' ]
 
     steps:
       - name: Install dependencies (Ubuntu)
